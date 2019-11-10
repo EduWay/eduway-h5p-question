@@ -1619,7 +1619,6 @@ function Question(type) {
     $container.append($sections);
 
     // Let others react to dom changes
-    console.log(self);
     self.trigger('domChanged', {
       '$target': $container,
       //'library': self.libraryInfo.machineName,
