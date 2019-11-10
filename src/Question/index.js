@@ -2,6 +2,7 @@ import $ from 'jquery';
 import UI from 'eduway-h5p-ui';
 import { EventDispatcher } from 'eduway-h5p-lib';
 
+import Explainer from '../Explainer';
 import ScorePoints from './ScorePoints';
 import './styles.css';
 
@@ -842,7 +843,7 @@ function Question(type) {
 
     // Image element
     var $img = $('<img/>', {
-      src: H5P.getPath(path, self.contentId),
+      src: path,
       alt: (options.alt === undefined ? '' : options.alt),
       title: (options.title === undefined ? '' : options.title),
       on: {
@@ -1009,7 +1010,7 @@ function Question(type) {
   /**
    * Remove feedback
    *
-   * @return {H5P.Question}
+   * @return {Question}
    */
   self.removeFeedback = function () {
 
@@ -1184,11 +1185,11 @@ function Question(type) {
    * @param {string} data.text
    * @param {string} title Title for explanation panel
    *
-   * @return {H5P.Question}
+   * @return {Question}
    */
   self.setExplanation = function (data, title) {
     if (data) {
-      var explainer = new H5P.Question.Explainer(title, data);
+      var explainer = new Explainer(title, data);
 
       if (sections.explanation) {
         // Update section
@@ -1347,7 +1348,7 @@ function Question(type) {
    *  is triggered
    * @param {function} clicked
    *  Click handler of button
-   * @return {H5P.ConfirmationDialog|undefined}
+   * @return {ConfirmationDialog|undefined}
    *  Confirmation dialog if enabled
    */
   self.addConfirmationDialogToButton = function (options, clicked) {

@@ -73,7 +73,7 @@
 
 .h5p-question-image-scalable:before {
   position: absolute;
-  font-family: 'H5PFontAwesome4';
+  font-family: 'FontAwesome';
   content: "\f067";
   right: 0.7em;
   top: 0.7em;
